@@ -10,7 +10,7 @@ app.use(express.json())
 
 
 //si aad databaseka ugu xirmatid
-mongoose.connect('mongodb://localhost:27017/Tasksdatabase').then(()=>{
+mongoose.connect('mongodb://0.0.0.0:27017/Tasksdatabase').then(()=>{
     console.log("connected to the database")
 }).catch((eror)=>{
     console.log(eror)
