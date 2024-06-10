@@ -16,7 +16,7 @@ mongoose.connect('mongodb://0.0.0.0:27017/Tasksdatabase').then(()=>{
     console.log(eror)
 })
 
-app.get('/get', async(req,res)=>{
+app.get('/', async(req,res)=>{
     const task = await TaskModel.find()
     res.json(task)
 })
