@@ -16,7 +16,7 @@ mongoose.connect('mongodb+srv://mohamedamiinabdi12:mohamedamiinabdi12@mytasks.td
     console.log(eror)
 })
 
-app.get('/', async(req,res)=>{
+app.get('/get', async(req,res)=>{
     const task = await TaskModel.find()
     res.json(task)
 })
