@@ -18,7 +18,7 @@ mongoose.connect('mongodb+srv://mohamedamiinabdi12:mohamedamiinabdi12@mytasks.td
 
 app.get('/get', async(req,res)=>{
     const task = await TaskModel.find()
-    res.json(task)
+    res.status(200).json(task)
 })
 
 app.post('/post', async(req,res)=>{
@@ -28,7 +28,7 @@ app.post('/post', async(req,res)=>{
     })
 
     const task = await newTask.save()
-    res.json(task)
+    res.status(201).json(task)
 })
 
 app.put('/update/:id', async(req,res)=>{
@@ -39,14 +39,14 @@ app.put('/update/:id', async(req,res)=>{
         task.date = date
         task.finished = finished
         const updatedtask = await task.save()
-        res.json(updatedtask)
+        res.status(200).json(updatedtask)
     }
     
 })
 
 app.delete('/delete/:id', async(req,res)=>{
     const task = await TaskModel.findByIdAndDelete(req.params.id)
-    res.json({message: "task deleted succesfully!"})
+    res.status(200).json({message: "task deleted succesfully!"})
 })
 
 //serverka kici
